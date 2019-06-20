@@ -4,17 +4,23 @@ import java.util.Scanner;
 
 public class HelloWorld {
 	public static void main(String[] args) {
-		// 首先，创建出一个用于获取终端输入的工具Scanner
-		Scanner sc=new Scanner(System.in);
-		// 先想办法获取用户输入的第一个数字
-		String name=sc.nextLine();
-		//"Tom".equals(name)
-		if(name.equals("Tom")){
-			System.out.println("欢迎您,tom");
-		}else if (name.equals("Jim")) {
-			System.out.println("你好，Jim");			
-		}else {
-			System.out.println(name+"滚蛋，你在本系统没有权限");
-		}		
+		boolean flag = true;
+		while (flag) {
+			// 首先，创建出一个用于获取终端输入的工具Scanner
+			Scanner sc = new Scanner(System.in);
+			// 先想办法获取用户输入的第一个数字
+			String num = sc.nextLine();
+			int nb = Integer.parseInt(num);
+			// "Tom".equals(name)
+			if (nb > 8) {
+				System.out.println("您猜得太大了");
+			} else if (nb < 8) {
+				System.out.println("您猜得太小了");
+			} else {
+				System.out.println("恭喜您，猜对了");
+				flag = false;
+			}
+		}
+
 	}
 }
