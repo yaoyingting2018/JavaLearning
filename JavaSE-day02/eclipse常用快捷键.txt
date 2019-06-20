@@ -1,0 +1,9 @@
+eclipse常用快捷键
+
+代码提示补全：  alt + /
+更名：  alt+shift+r
+删除一行代码：  ctrl + d
+赋值一行：  ctrl + alt + ↓
+上下移动一行： alt+↓     alt+ ↑
+
+
