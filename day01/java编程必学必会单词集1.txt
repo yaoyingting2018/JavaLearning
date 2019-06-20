@@ -1,0 +1,103 @@
+JAVA编程必学必会单词集（1）
+
+public ：公共的
+private： 私有的
+try： 尝试
+use：使用
+main： 主要的
+class  ：  类
+string ： 字符串
+byte：  字节  01001100  佛祖释迦牟尼  大象   3
+integer ： 整型   100
+long ： 长，长整型  
+double ： 一双一对，  双精度数字
+float ：  浮点
+void ： 空的，虚空，无效的
+null ：空的，没有任何事物的  
+print：  打印
+console ：终端
+out： 输出   
+in：   输入
+object：   事物；对象
+version：  版本
+system：系统  
+file： 文件
+random： 随机的  《上帝也会掷骰子吗 》
+package： 包
+read：  读 
+write： 写  
+request： 请求
+response：响应 
+stream ： 水流 
+invoke： 激活，唤醒
+data：  数据 
+user： 用户
+list：  列表，列清单
+array：  数组  
+exception： 异常
+throw：抛，扔 
+get： 获取
+set： 设置
+new：  新的， 新建
+contain： 包含  
+copy： 拷贝
+password： 
+age：年 
+address：  
+return：  
+tool ： 工具
+add：  添加
+remove：  移除 
+delete：  删除
+split： 切分，分割
+number： 数字 
+show：  展示，显示
+true： 正确的  
+false： 错误的  
+parse： 解析     
+equal：  相等
+if： 如果  
+else：  否则
+index：  索引
+buffer：  缓存
+constant： 常量  
+static：  静态的，静止的
+while： 当......
+register：  注册
+login： 登录
+property ：  属性
+load：  加载；
+discount：  折扣
+sum：  和
+max： 最大值
+min： 最小值
+length：长度
+student： 学生
+teacher： 老师
+windows： 
+operating system
+android
+ios
+linux
+network  网络
+net  网络
+driven 驱动
+disk 磁盘
+ram   内存
+run  运行
+program  程序
+software  软件
+programming  写程序，开发程序
+select  选择
+directory 目录
+store  存储
+workspace 工作空间
+launch 启动
+cancel  取消
+browse 浏览文件夹
+
+
+
+ 
+
+
