@@ -1,7 +1,5 @@
 package day02;
 
-import java.util.Scanner;
-
 public class array {
 	public static void main(String[] args) {
 		// 造数据
@@ -11,25 +9,22 @@ public class array {
 		arr[2] = 25;
 		arr[3] = 30;
 		arr[4] = 18;
-
+		
 		// 实现需求
-		// 需求1： 求最大值
-		int tmp = arr[0];
-		for (int i = 1; i < arr.length; i++) {
-			if (arr[i] > tmp) {
-				tmp = arr[i];
+		for(int i=0;i<arr.length-1;i++){
+			for(int j=0;j<arr.length-1-i;j++){
+				// 如果顺序不对就调换位置
+				if(arr[j]>arr[j+1]){
+					int tmp=arr[j];
+					arr[j]=arr[j+1];
+					arr[j+1]=tmp;
+				}				
 			}
 		}
-
-		System.out.println("最大值为： " + tmp);
-
-		tmp = arr[0];
-		for (int i = 1; i < arr.length; i++) {
-			if (arr[i] < tmp) {
-				tmp = arr[i];
-			}
+		
+		// 打印排序后的结果
+		for(int i=0;i<arr.length;i++){
+			System.out.println(arr[i]);
 		}
-
-		System.out.println("最小值为： " + tmp);
 	}
 }
