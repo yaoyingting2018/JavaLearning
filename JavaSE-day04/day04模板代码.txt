@@ -1,0 +1,139 @@
+1、ArrayList的用法 //------------------------------------------------------------------
+
+public class ListDemo{
+	
+	
+	public static void main(String[] args){
+		
+		
+		// 创建一个用来装整数数据的arraylist对象
+		ArrayList<Integer> xx = new ArrayList<Integer>();
+
+		// 向arraylist中添加数据
+		xx.add(1);
+		xx.add(3);
+		xx.add(5);
+		xx.add(7);
+
+		// 从arraylist中读取数据
+		int a = xx.get(1);
+		System.out.println(a);
+
+		System.out.println("------------------------");
+		
+		
+		// 遍历list： 将整个arraylist的数据按脚标顺序全部打印出来
+		for (int i = 0; i < xx.size(); i++) {
+			System.out.println(xx.get(i));
+		}
+		
+		
+		System.out.println("------------------------");
+		
+		// 从list中移除数据
+		xx.remove(1);
+		for (int i = 0; i < xx.size(); i++) {
+			System.out.println(xx.get(i));
+		}
+		
+		// 更改list中指定位置上的数据
+		xx.set(2, 15);
+	
+	}
+
+}
+
+
+
+// ------------ 方法的模板代码------------------------ // -----------------------------// 
+
+public class FunctionDemo{
+	public int a;
+	public int b;
+	
+	
+	// 无参，无返回值   ----   方法示例
+	
+	public void sayHello(){
+		System.out.println("我爱你，真的，很爱");
+	}
+	
+	
+	// 无参，有返回值   ----   方法示例
+	public int getSelfSum(){
+		
+		return a+b;
+		
+	}
+
+	// 有参，无返回值   ----   方法示例
+	public void sayHelloToSomeOne(String name){
+		
+		System.out.println(name + "我爱你，真的，很爱");
+		
+	}
+
+	
+	// 有参，有返回值，且是静态  ----   方法示例
+	public static  int getOtherSum(int x,int y){
+		return x+y;
+	}
+	
+	
+	// 有参，有返回值，非静态  ----   方法示例
+	public  int getOtherSum(int x){
+
+		return this.a+this.b+x;
+	}	
+	
+	
+}
+
+
+public class FunctionDemoTest{
+	
+	public static void main(String[] args){
+		
+		// 非静态方法，必须在对象上调
+		
+		FunctionDemo fd = new FunctionDemo();
+		
+		fd.sayHello();
+		
+		int selfSum = fd.getSelfSum();
+		
+		
+		fd.sayHelloToSomeOne("芙蓉姐姐");
+		
+		// 静态方法可以在对象上调，但是没有必要
+		// int otherSum = fd.getOtherSum(5,8);
+		int otherSum = FunctionDemo.getOtherSum(5,8);
+		
+	}
+	
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
