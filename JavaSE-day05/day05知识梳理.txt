@@ -1,0 +1,55 @@
+1、private修饰符
+
+public class Person{
+    private String name;
+	private int mathScore;
+	private int englishScore;
+	private int amountScore;
+	
+	
+	public void setName(String name){
+	    this.name = name;	
+	}
+	......
+	
+	public void setAmountScore(){
+	   this.amountScore = this.mathScore + this.englishScore;	
+	}
+
+}
+
+
+main{
+	
+	Person p = new Person();	
+	//p.amountScore   已经无法这样引用amountScore变量
+	p.setName("宝宝");
+	
+	p.setMathScore(90);
+	p.setEnglishScore(80);
+	
+	p.setAmountScore();
+	
+	
+}
+
+
+3、public String toString(){  return "......";}方法
+用于将对象上的数据拼接成一个字符串，方便外面来打印这个对象
+
+
+2、LoL游戏角色建模
+
+
+
+3、自动售货系统
+   a、商品管理系统：商品池造数据,展示
+   b、购物车管理系统： 添加商品到购物车，展示购物车
+
+
+
+
+
+
+
+
