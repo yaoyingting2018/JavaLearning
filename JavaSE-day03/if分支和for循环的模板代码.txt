@@ -1,0 +1,52 @@
+顺序执行逻辑
+int a= -3;
+a = a+1;
+
+
+控制分支逻辑（条件控制）
+if(a>2){
+   System.out.println("大于2");
+}else{
+   System.out.println("小鱼儿");
+}
+
+
+if(a>2){
+   System.out.println("大于2");
+}else if(0<a && a<1){
+   System.out.println("小于1");
+}else if(a<0 || a<-5){
+	
+}else{
+   System.out.println("小鱼儿");
+}
+
+
+
+
+
+
+
+
+循环逻辑
+int i = 0;
+while(i<100){
+  System.out.println("我爱你");
+  i++;
+
+}
+
+for(int i=0;i<100;i++){
+  System.out.println("我爱你");
+}
+
+
+
+
+
+
+
+
+
+
+

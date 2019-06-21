@@ -1,0 +1,51 @@
+// java编程的普通类定义代码结构
+public class User{
+	// 写变量定义
+	String name;
+	int age;
+	float score;
+	String sex;
+	
+}
+
+
+
+public class UserManage{
+	
+	public static void main(String[] args){
+		
+		User u1 = new User();
+		u1.name = "张三";
+		u1.age = 18;
+		u1.sex = "male";
+		u1.score = 98.5f;
+		
+		
+		User u2 = new User();
+		u2.name = "李四";
+		u2.age = 28;
+		u2.sex = "female";
+		u2.score = 96.5f;
+		
+		
+		
+		
+		
+		// 打印u1对象的name值
+		System.out.println(u1.name)
+		
+		// 修改u1对象的age值
+		u1.age = 19;
+		
+		//  给u2对象的score赋值为101.5
+		u2.score = 101.5f;
+		
+	}
+	
+	
+}
+
+
+
+
+

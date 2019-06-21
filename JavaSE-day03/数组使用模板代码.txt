@@ -1,0 +1,46 @@
+定义一个数组，放入 8 4 9 2 3 
+然后将其按先后顺序打印出来
+
+int[] arr = new int[5];
+arr[0] = 8;
+arr[1] = 4;
+arr[2] = 9;
+arr[3] = 2;
+arr[4] = 3;
+
+
+
+for(int i=0;i<5;i++){
+  System.out.println(arr[i]);
+}
+
+
+for(int i=4;i>=0;i--){
+  System.out.println(arr[i]);
+}
+
+
+// 找最大值
+int tmp = arr[0];
+for(int i=1;i<5;i++){
+   if(arr[i]>tmp){
+       tmp = arr[i];
+   }
+}
+System.out.println(tmp);
+
+
+// 找最小值
+int tmp = arr[0];
+for(int i=1;i<5;i++){
+   if(arr[i]<tmp){
+       tmp = arr[i];
+   }
+}
+System.out.println(tmp);
+
+
+
+
+
+

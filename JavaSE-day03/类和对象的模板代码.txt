@@ -1,0 +1,82 @@
+/**定义一个类Employee，包含以下属性：
+id
+name
+salary
+然后创建几个Employee对象，将他们放入数组，然后从数组中找出工资最高的那个员工对象
+**/
+
+public class Employee{
+
+   String id;
+   String name;
+   float salary;
+   
+   // 空参构造方法： 用来构造一个对象时执行的初始化逻辑
+   public Employee(){
+	   
+   }
+   
+   // 有参构造方法： 用来构造一个对象时执行的初始化逻辑
+   public Employee(String p1,String p2,float p3){  
+	   this.id = p1;
+	   this.name = p2;
+	   this.salary = p3;
+   }
+   
+}
+
+// --------------------------------//---------------------------------//
+
+/**
+写一个测试程序，来使用一下上面定义的Employee类
+**/ 
+public class EmployeeTest{
+
+  public static void main(String[] args){
+       // 利用空参构造来创建对象
+       Employee e1 = new Employee();
+	   Employee e2 = new Employee();
+	   Employee e3 = new Employee();
+	   
+	   // 利用有参构造来创建对象
+	   Employee e4 = new Employee("4","d",5600);
+	   
+	   e1.id = "1";
+	   e1.name = "a";
+	   e1.salary = 3000;
+	   
+	   e2.id = "2";
+	   e2.name = "b";
+	   e2.salary = 4000;
+	   
+	   e3.id = "3";
+	   e3.name = "c";
+	   e3.salary = 2800;	 
+ 
+       // 定一个用来装Employee类型数据的数组，然后手动一个一个填入数据
+	   Employee[] eArray = new Employee[3];
+	   // 往数组中装
+	   eArray[0] = e1;
+	   eArray[1] = e2;
+	   eArray[2] = e3;
+	   
+	   // 定义一个Employee类型数据的数组，并且在创建时直接赋予初始数据
+	   Employee[] eArray2 = new Employee[]{e1,e2,e3,e4};
+	   
+	   Employee[] eArray3 = new Employee[]{e1,e2};
+	   
+  
+	   // 找一个基准值
+       Employee tmp = eArray[0];
+       for(int i=1;i<3;i++){
+	        if(eArray[i].salary > tmp.salary){
+			   tmp = eArray[i];
+			}
+	   }
+ 
+  }
+
+
+}
+
+

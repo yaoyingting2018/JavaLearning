@@ -1,0 +1,68 @@
+// 变量定义： 定义一个代号，用来代表一个数据
+
+//定义一个变量：  数据类型 变量名
+int aaa;   // 定义了一个变量 aaa，用来代表整数数据
+aaa=1;    // 拿一个已经被定义好的变量来赋值
+
+String bbb;   //又定义了一个新的变量bbb，用来代表字符串数据
+bbb="i love you ,baby";  // 拿定义好的bbb来赋值
+
+long ccc = 100L;  // 又定义了一个新的变量ccc，用来代表长整型数据，并且在定义时就赋了一个初始值100
+
+float ddd = 10.8f;  // 有定义了一个新的变量ddd，并且赋予了一个初始值10.8
+
+double eee = 100;   // 有定义了一个新的变量eee，并且赋予了一个初始值100
+
+
+// 定义整数类型数组类型变量
+
+int[] arr1 = new int[8];  // new int[8] 是在内存中创建出一个8长度的整数数组，
+                         // 左边 int[] arr  定义一个整数类型的数组变量； = 号就是将new出来的数组赋值给变量arr
+						 
+
+// 定义一个装float数据的数组
+float[] arr2 = new float[6];
+
+// 定义一个装字符串数据的数组
+String[] arr3 = new String[7];
+
+// 定义一个装double数据的数组
+double[] arr4 = new double[4];
+
+
+
+// 给数组中的格子赋值
+arr1[3] = 88;
+
+arr3[1] = "uuu";
+
+
+// 打印arr4这个数组中的第3个元素的值
+System.out.println(arr4[2]);
+
+// 把arr2中的第2个元素和第4个元素相加，并打印结果   System.out.println( arr2[1] + arr2[3] )
+float tmp1 = arr2[1];
+float tmp2 = arr2[3];
+float sum = tmp1+tmp2;
+System.out.println(sum);
+
+
+/**
+*
+* 如何操作数据中的数据：  用   数组变量名[脚标];
+*
+**/
+
+
+
+
+
+
+
+
+
+						 
+						 
+						 
+
+
