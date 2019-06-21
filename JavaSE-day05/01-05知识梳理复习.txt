@@ -1,0 +1,163 @@
+java语言
+跨平台的 ： 它的程序是由jvm来执行的，不是直接让操作系统执行
+
+java语言：面向对象的语言
+
+java编程的最基本单元就是： class类
+
+类里面能写什么？
+   成员变量定义或者直接赋初始值
+   成员方法
+   构造方法
+   
+   
+public class Test{
+
+	private String id;   // 私有成员变量
+	public String name;   // 公共成员变量
+	public int age = 18;  // 公共成员变量定义及赋初始值
+
+	// 空参构造函数
+	public Test(){    
+	}
+	
+	public Test(String p1,String p2){
+		this.id = p1;
+		this.name = p2;
+	}
+	
+	public void setId(String id){
+		this.id = id;
+	}
+	
+	
+	// 静态成员方法，需要传参数，没有返回值
+	public static void sayHello(String xx){
+		System.out.println(xx + " ,welcome!");
+	}
+	
+	// 普通成员方法，不需要传参数，有返回值
+	public int getAge(){
+		return this.age;
+	}
+
+}  
+
+
+
+/** 类怎么用？ 类一般都是在别的类中使用：用来构造一个对象以便于封装具体的数据，以及在这个对象上调其方法 **/
+
+// 上面定义的类，可以在别的类中使用
+public class Demo{
+	
+	// main方法是由jvm来调用的
+	public static void main(String[] args){
+		// 直接调用Test类的静态方法sayHello
+		Test.sayHello("杨幂");
+		
+		
+		// 利用Test类的空参构造函数，构造一个Test类的实例对象
+		Test t1 = new Test();
+		
+		// 利用Test类的有参构造函数，构造一个Test类的实例对象
+		Test t2 = new Test("007","james bond");
+		t2.age = 28;
+		t2.setId("008");
+		t2.sayHello("杨幂");
+
+	}
+}
+
+
+
+
+/** 逻辑控制语法 **/
+
+if else
+for 循环
+while 循环
+switch case 匹配	
+
+
+
+
+/** 常用工具类的使用   **/
+// 第1个工具类
+Scanner  ： 用来从终端上获取用户输入的信息
+Scanner sc = new Scanner();
+String line = sc.nextLine();
+
+
+// 第2个工具类
+Integer: 是int数据的包装类 ：用来操作整数
+int a = 5;
+Integer aInteger = new Integer(5);
+
+// 将一个阿拉伯字符解析成一个整数
+
+int m = Integer.parseInt("98");
+int max = Integer.MAX;
+
+
+// 第3个工具类
+String: 用来封装一串字符，同时也提供了大量的工具方法
+//String a= new String("xxxxx");
+String a = "xxxx,xx,yyyy";
+
+String[] split = a.split(",");  // 切割字符串  ["xxxx","xx","yyyy"]
+String s = a.subString(0,5); //截取子串   ：  xxxx,
+String u = a.toUpperCase();   // 将字符串转成大写  :  XXXX,XX,YYYY
+
+
+// 第4个工具类
+ArrayList<Object>
+
+
+ArrayList<String> sList1；  // 定义一个ArrayList<String>类型的变量sList1，没有赋予任何值，那么这个变量代表的是null
+ArrayList<String> sList2 = new ArrayList<String>();  // 定义一个ArrayList<String>类型的变量sList2，并构造出一个空的list赋值给它
+
+// 添加数据
+sList2.add("马蓉")；
+sList2.add("宋喆");
+sList2.add("白百合");
+
+// 取数据
+String x = sList2.get(2);
+
+
+
+// 第5个工具  HashSet<>
+
+// 集合类型中的工具：迭代器
+
+
+
+// 第6个工具  HashMap<>
+
+
+
+
+// 面向对象编程重要知识：接口
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
