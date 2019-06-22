@@ -1,0 +1,27 @@
+public interface UserDao{
+   public User findUserByName(String name);
+}
+
+
+
+
+
+
+
+1/先定义service层的接口
+思考：  看service层需要为上层提供什么样的功能（接什么参数，返回什么结果）
+
+
+2/ 根据service层接口写实现类
+
+在写service实现类的过程中，需要调dao层功能
+
+
+3、根据service层的需求，定义dao层接口
+
+
+
+4、根据dao层接口，写dao层实现类
+（假设数据库是在UserDatabase类的静态HashMap中）
+
+
