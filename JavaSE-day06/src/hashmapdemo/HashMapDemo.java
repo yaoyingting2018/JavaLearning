@@ -5,46 +5,51 @@ import java.util.Set;
 
 public class HashMapDemo {
 	public static void main(String[] args) {
-		// ¹¹ÔìÒ»¸öhashmap¶ÔÏó
-		HashMap<String, String> map1 = new HashMap<>();
+		// 1ã€é€ å‡ ä¸ªproductå¯¹è±¡ï¼Œæ”¾å…¥ä¸€ä¸ªhashmapä¸­
+				Product p1 = new Product("1", "é¦™è•‰", 20, 2);
+				Product p2 = new Product("2", "æ©˜å­", 10, 2);
+				Product p3 = new Product("3", "æ¦´è²", 120, 2);
+				Product p4 = new Product("4", "é¦™è•‰", 20, 2);
+				Product p5 = new Product("5", "æ¦´è²", 120, 2);
+				Product p6 = new Product("6", "æ¦´è²", 120, 2);
 
-		// ÍùhashmapÖĞÌí¼ÓÊı¾İ£¬Èç¹ûkeyÖØ¸´£¬Ôò»á¸²¸Ç
-		map1.put("1", "°×°ÙºÏ");
-		map1.put("1", "ÂíÈØ");
+				HashMap<String, Product> pdtMap = new HashMap<>();
+				pdtMap.put(p1.getpId(), p1);
+				pdtMap.put(p2.getpId(), p2);
+				pdtMap.put(p3.getpId(), p3);
+				pdtMap.put(p4.getpId(), p4);
+				pdtMap.put(p5.getpId(), p5);
+				pdtMap.put(p6.getpId(), p6);
 
-		// ¼ÌĞøÌí¼Ó
-		map1.put("2", "Íõ±¦Ç¿");
-		map1.put("3", "»Æ²³");
-		map1.put("4", "½ù¶«");
-		map1.put("5", null);
+				// 2ã€ç»™æˆ‘æ‰¾å‡ºhashmapä¸­äº§å“åç§°é‡å¤çš„æ•°æ®ï¼Œå¹¶æ‰“å°å‡ºå‘ç”Ÿäº†é‡å¤çš„æ•°æ®äº§å“idï¼š
 
-		// »ñÈ¡mapÖĞµÄÊı¾İ
-		String a = map1.get("3");
-		System.out.println(a);
+				// éå†pdtMapï¼Œé€ä¸€å–å‡ºé‡Œé¢çš„productå¯¹è±¡ï¼Œç„¶åæ„é€ ä¸€ä¸ªæ–°çš„hashmap
+				// ç„¶ååˆ¤æ–­ï¼Œè¿™ä¸ªproductå¯¹è±¡çš„nameåœ¨æ–°hashmapæ˜¯å¦å­˜åœ¨ï¼Œå¦‚æœå°šä¸å­˜åœ¨ï¼Œåˆ™å°†è¿™ä¸ªproductå¯¹è±¡çš„nameä½œä¸ºkeyï¼Œidä½œä¸ºvalueæ”¾å…¥ä¸€ä¸ªæ–°çš„hashmapä¸­
+				// å¦‚æœå·²å­˜åœ¨ï¼Œåˆ™å°†ä¹‹å‰çš„idæ‹¼ä¸Šè¿™ä¸ªproductçš„idä½œä¸ºvalueè¦†ç›–è¿›å»
 
-		// »ñÈ¡mapµÄ³¤¶È
-		int size = map1.size();
-		System.out.println(size);
+				HashMap<String, String> newMap = new HashMap<>();
 
-		// ´ÓmapÖĞÒÆ³ıÊı¾İ
-		String remove = map1.remove("3");
-		System.out.println(remove);
+				Set<String> keySet = pdtMap.keySet();
+				for (String id : keySet) {
+					Product p = pdtMap.get(id);
+					if (newMap.containsKey(p.getpName())) {
+						String id_value = newMap.get(p.getpName()); // ä»æ–°mapä¸­å–å‡ºå·²å­˜åœ¨çš„äº§å“id
+						newMap.put(p.getpName(), id_value + "," + p.getpId()); // å°†æ–°mapä¸­çš„äº§å“idæ‹¼ä¸Šè¿™æ¬¡ä»è€mapä¸­å–å‡ºçš„äº§å“çš„id
+					} else {
 
-		// ÅĞ¶ÏÊı¾İÊÇ·ñ´æÔÚ
-		// ·½·¨1£ºÔÙÈ¥getÄÇ¸öÒÆµôµÄkey£¬¿´ÊÇ·ñ»¹ÄÜ»ñÈ¡µ½value
-		String b = map1.get("5");
-		System.out.println(b);
+						newMap.put(p.getpName(), p.getpId());
+					}
+				}
 
-		// ·½·¨2£º¿ÉÒÔÀûÓÃmapµÄcontains¹¦ÄÜÅĞ¶ÏÖ¸¶¨µÄkeyÊÇ·ñ´æÔÚ
-		boolean c = map1.containsKey("5"); // ´Ë·½·¨²ÅÄÜÕæÕıÈ·¶¨mapÖĞÊÇ·ñ´æÔÚÖ¸¶¨µÄkey
-		System.out.println(c);
+				Set<String> keySet2 = newMap.keySet();
+				for (String name : keySet2) {
+					String ids = newMap.get(name);
+					System.out.println(ids + "-->" + name);
 
-		// hashmapµÄ±éÀú£º
+				}
 
-		Set<String> keySet = map1.keySet();
-		for (String id : keySet) {
-			System.out.println(map1.get(id));
-		}
+				// 1,4-->é¦™è•‰
+				// 3,5,6-->æ¦´è²
 	}
 
 }
