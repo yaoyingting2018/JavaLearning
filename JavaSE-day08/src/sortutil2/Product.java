@@ -1,4 +1,4 @@
-package sortutil1;
+package sortutil2;
 
 public class Product {
 	private String productId;

@@ -1,6 +1,7 @@
-package sortutil1;
+package sortutil2;
 
-public class AgeBijiaoqi implements BijiaoQi {
+
+public class AgeBijiaoqi implements BijiaoQi<User> {
 
 	@Override
 	public boolean bijiao(User u1, User u2) {
