@@ -1,4 +1,4 @@
-package collections;
+package sortutil1;
 
 public class Product {
 	private String productId;

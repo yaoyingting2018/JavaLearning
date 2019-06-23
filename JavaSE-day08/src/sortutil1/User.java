@@ -1,6 +1,6 @@
-package collections;
+package sortutil1;
 
-public class User implements Comparable<User>{
+public class User{
 	// id ,name ,age ,salary
 		private String id;
 		private String name;
@@ -67,16 +67,6 @@ public class User implements Comparable<User>{
 		}
 
 
-		@Override
-		public int compareTo(User other) {
-			if (this.age > other.getAge()) {
-				return 1;
-			}
-			if (this.age == other.getAge()) {
-				return 0;
-			} else {
-				return -1;
-			}
-		}
+		
 	
 }
