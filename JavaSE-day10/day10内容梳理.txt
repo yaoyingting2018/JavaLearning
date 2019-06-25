@@ -1,0 +1,207 @@
+/**
+*
+* 知识部分
+* 
+**/
+1、数据流的使用
+数据流： DataInputstream  和 DataOutputStream
+DataOutputStream可以帮用户把各种java类型数据转成2进制写入文件流 writeInt(int i)  writeLong(long l)  writeFloat(float f)  writeUTF(String s)
+DataInputstream可以帮用户从文件流中直接读取出用户需要的数据 readInt()   readLong()  readFloat()  readUTF()
+
+
+
+
+2、对象流的使用
+对象流： ObjectOutputStream 和  ObjectInputStream
+ObjectOutputStream可以帮用户直接把一个java的对象变成2进制写入文件流（或者网络流....）,必要前提是：该java对象的类型必须实现serializable接口
+ObjectInputStream可以帮用户从文件流（或者网络流）中读取2进制数据转成一个java对象
+
+
+
+
+3、序列化和反序列化
+概念而已： 
+将一个对象变成一个二进制数据序列  --》  这个过程叫序列化
+反之，则称为反序列化
+
+
+
+
+4、java中的异常Exception处理
+Exception是java对程序运行过程中可能出现的不可预料的不正常状态的一种描述
+具体的Exception有各种类型：比如数组脚标越界、list脚标越界、nullpoint异常、NumberFormat异常、ArithmeticException除0异常.....
+jvm在遇到异常时，会中止程序的执行，并打印出异常信息到控制台
+
+
+/**
+捕获异常
+**/
+那么，我们在写程序时，如果遇到可能出现异常的语句，就可以在这个语句外面包围一个try-catch结构来捕获异常，以便于后续代码可以继续执行
+
+int a=5;
+int b= Integer.parseInt(scanner.nextLine())
+try{
+	int c = a/b;
+}catch(Exception e){
+	
+	System.out.println(e.getMessage());
+}
+
+System.out.println("后续代码");
+
+
+/**
+ 抛异常
+**/
+
+抛异常可以直接抛给jvm： 就是说，在main方法中，不对可能出现异常的代码进行try-catch
+
+下层方法可以把异常抛给上层调用者
+
+比如：定义一个方法，求商，方法声明会抛出异常
+public static int divide(int a,int b) throws Exception{
+	return a/b;
+}
+
+
+// divide方法的调用者就能获得提示：如何处理异常
+// 可以选择继续往上抛
+main thows Exception {
+	
+	divide(5,0);
+
+}
+
+// 也可以选择将异常抓住，不再外抛了
+main{
+	
+	try{
+	   divide(5,0);
+	}catch(Exception e){
+	   sysout(e.getMessage());
+	}
+	
+}
+
+
+
+5、继承
+整体作用：对同一类事物进行类定义时，很多的公共属性和方法，可以抽取到一个父类中；具体事物类只要继承这个父类，就拥有了它的属性和方法
+
+/** 定义一个父类 Person **/
+public class Person{
+	public String name;
+	public int age;
+	public float salry;
+	
+	public void say(){
+		
+	}
+	
+	public void eat(){
+		
+		sysout("正在吃饭....")
+	}
+	
+}
+
+/** 定义一个子类 ChinesePerson **/
+public class ChinesePerson extends Person{
+	
+	// 公共属性和方法就不需要重新定义了（父类中的私有属性和方法不会被继承）
+	
+	// 可以定义特有属性
+	public String[] friends;
+	
+	// 可以定义特有方法
+	public void makeFriends(String[] friends){
+		this.friends = friends;
+	}
+	
+	// 也可以重写父类中的方法
+	@Override
+	public void eat(){
+		
+		sysout("你好，吃了吗？");
+	}
+	
+	
+}
+
+
+6、抽象类
+抽象类一般用来作为一个父类，但是里面可以有方法是抽象的，以让子类来实现
+
+/**
+ * abstract 修饰符，表示这个类是一个抽象类
+ * 抽象类和普通类的区别：  抽象类中可以有抽象方法(只有方法定义，没有方法体)
+ * @author ThinkPad
+ *
+ */
+public abstract class AbstractPerson {
+	
+	public String name;
+	public int age;
+	
+	//abstract 声明这个方法是一个抽象方法
+	public abstract void say();
+	
+	public void eat() {
+		System.out.println("正在吃饭......");
+	}
+	
+}
+
+/** 继承了抽象类的子类  **/
+public class JapaneseExtendsAbstractPerson extends AbstractPerson{
+
+	/**
+	 * 子类中必须实现抽象类中的抽象方法
+	 */
+	@Override
+	public void say() {
+		System.out.println("雅蠛蝶");
+	}
+}
+
+
+7、 反射
+
+
+String classname = "com.doit.pojo.Person";
+Class<?> forName = Class.forName(classname);
+Person o = (Person)forName.newInstance();
+
+
+
+
+
+
+
+反射的基本机制： 可以根据一个“类全名字符串”  ，获得代表这个类的class对象，然后根据这个class对象构造出这个类的真正实例对象 
+
+String className = "cn.edu360.javase24.reflect.demo.SerivceOne";
+Class<?> forName = Class.forName(className);   // 根据类名字符串“SerivceOne”获取class对象
+SerivceOne o = (SerivceOne)forName.newInstance();  // 用class对象构造出这个类SerivceOne的实例对象
+o.say();
+
+
+
+/**
+*
+* 练习部分
+* 
+**/
+1、商品数据、购物车数据的对象化存取
+
+
+
+
+2、利用文件持久化保存机制来重构实现自动售货系统
+
+
+
+
+
+
+
