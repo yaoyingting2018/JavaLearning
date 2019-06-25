@@ -1,4 +1,4 @@
-package datastream;
+package exception;
 
 public class User {
 	String name;
@@ -6,7 +6,9 @@ public class User {
 	float salary;
 	long hairNum;
 	
-	
+	public User(){
+		
+	}
 	public User(String name, int age, float salary, long hairNum) {
 		super();
 		this.name = name;
