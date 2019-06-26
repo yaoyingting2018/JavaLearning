@@ -1,0 +1,147 @@
+一、socket编程
+网络通信基本概念：
+
+   通信： 就是从一台机器上的一个软件，发送数据到另一台机器的一个软件上
+   概念： 先发送数据的软件：称为客户端 
+          被动接收数据的软件：称为服务端
+		  
+	数据从一台机器发到另一台机器，目标地址如何指定？
+		通过对方的ip和端口
+		
+		
+
+JAVA中写socket的基本代码：
+服务端：
+
+    ServerSocket  ss = new ServerSocket(10000)；
+	
+	Socket sc = ss.accept();
+
+	InputStream in = sc.getInputStream();
+	OutputStream out = sc.getOutputStream();	
+	
+	in.read()  //接收：一次读一个字节
+	in.read(buf)// 接收：一次读buf长度个字节
+	
+	out.write("aaa".getBytes) // 发送数据
+	
+客户端：
+    Socket sc = new Socket("192.168.10.130",10000)	
+	// 然后收发数据即可
+
+
+
+
+二、多线程 
+
+概念： 让cpu同时以多个线程执行一个方法run() 
+
+JAVA代码：
+
+1、先写一个类实现runnable接口
+public class Talk implements Runnable{
+	
+	public void run(){
+		// 想用多个线程同时执行的逻辑
+		
+	}
+	
+}
+
+2、然后创建多个线程，放入上面的Talk的对象，然后启动
+new Thread(new Talk()).start();
+new Thread(new Talk()).start();
+new Thread(new Talk()).start();
+
+
+
+
+三：将socketserver改造成多线程
+
+先将对话逻辑写入一个runnable实现类的run方法中
+public class Talk implements Runnable{
+	Socket sc =null;
+	public Talk(Socket sc){
+		this.sc = sc;
+	}
+	public void run(){
+		// 对话逻辑
+		
+	}
+	
+}
+
+
+然后在serversocket程序中：如下改造
+while(true){
+	Socket sc = ss.accept();
+	new Thread(new Talk(sc)).start()
+}
+
+
+
+四、从文件中快速读取想要的数据的设计思想
+
+思想： 先把各个数据字段按照固定长度固定规律存入文件
+然后，当需要找id=5这个商品的数据时，就可以根据规律算出这个商品的数据在文件中的起始位置（偏移量）
+
+用到一个新工具： RandomAccessFile
+模板代码：
+
+RandomAccessFile raf = new RandomAccessFile("d:/p.dat","r");
+
+raf.seek(56);
+
+int id = raf.readInt();
+
+byte[] b = new byte[20];
+raf.read(b);
+String name = new String(b).trim();
+
+
+实现： 看代码
+
+
+
+五、水平考试题：
+
+将快速查找商品数据的功能补全： 不光可以按id找，还可以按name，price找
+
+然后，将这个功能放入一个socketserver程序中，以使得可以让别人从别的机器上请求数据
+
+然后，将这个socketserver程序改造成多线程实现
+
+
+
+六、合格考试题要求：
+
+定义变量
+if - else会用
+while会用
+for会用
+arraylist会用
+hashmap会用：存、取、判断、遍历
+定义类
+定义一个方法
+定义一个接口
+实现一个接口
+怎么创建一个对象
+怎么调一个方法
+怎么读文件
+怎么写文件
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
