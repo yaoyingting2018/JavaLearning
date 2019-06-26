@@ -1,0 +1,2 @@
+OneTwoService:reflect.demo.ServiceOne
+OtherService:reflect.demo.OtherServiceOneImpl
