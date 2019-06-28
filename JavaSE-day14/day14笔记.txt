@@ -1,0 +1,56 @@
+1、讲解newbi数据库的功能改造（服务化改造：socket）作业题
+
+
+2、补充了一些语法和工具
+二维数组  ****
+三元表达式  ******
+String a = 1>2?"大":"小";
+
+
+do-while
+continue  -  break
+
+/**
+**/
+匿名内部类 :    new Person();     new Person(){    }  // 弄了一个Person的匿名子类
+//匿名内部类对象的典型模板    **********
+Collections.sort(pList,new Comparator<Product>(){
+	public int compare(Product p1,Product p2){
+		//  
+	}
+});
+
+
+/**
+**/
+Properties:属性配置文件工具   ********
+Properties props = new Properties();
+//加载xx.properties属性配置文件
+props.load(Test.class.getClassLoader().getResourceAsStream("xx.properties"));
+//取配置参数
+String value = props.getProperty("key");
+
+
+3、动态代理
+根据一个或者多个接口，用jdk的Proxy框架构造出一个“动态代理类”的对象（动态代理对象）
+那么，这个动态代理对象上就具备那些接口上的方法
+只不过，这些方法的具体逻辑，是定义在InvocationHandler实现类的invoke()方法中；
+
+代码：
+ReadData o = (ReadData)Proxy.newProxyInstance(ReadData.class.getClassLoader(),new Class<?>[]{ReadData.class},new InvocationHandler(){
+	
+	public Object invoke(Object proxy,Method method,Ojbect[] args){
+		
+	}
+	
+});
+
+o.findProductById(3);  //该调用其实被动态代理机制所拦截，执行的是invoke里面的逻辑
+
+
+
+4、利用动态代理封装了一个RPC框架
+核心思想：给客户端一个动态代理对象，客户就以为拿到了服务端的一个实现类的对象，就愉快地凋起了方法，他还以为真的在他的机器上调到了这个方法
+而本质上，他的调用行为被我们提供的动态代理对象上的invoke所拦截，在invoke中向远程服务器进行了通信交互，拿到结果，再返回给用户
+
+
